@@ -97,13 +97,13 @@ public class LabsThree {
 //            return false;
 //        if (masOne[0].length > masTwo[0].length)
 //            return false;
-        for (int i = 0; i < masOne.length; i++) {
-            for (int j = 0; j < masOne[i].length; j++)
-                masOne[i][j] = 0;
+        for (int[] i: masOne) {
+            for (int j: i)
+                j = 0;
         }
-        for (int i = 0; i < masTwo.length; i++) {
-            for (int j = 0; j < masTwo[i].length; j++)
-                masTwo[i][j] = 0;
+        for (int[] i: masTwo) {
+            for (int j: i)
+                j = 0;
         }
         boolean flag = false;
         int count = 0;
