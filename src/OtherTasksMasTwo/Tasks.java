@@ -173,7 +173,7 @@ public class Tasks {
     }
 
     public static void random(int[][] mas) {
-        int min = 1, max = 3;
+        int min = 1, max = 15;
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
                 mas[i][j] = (int) (Math.random() * ((max - min) + 1) + min);

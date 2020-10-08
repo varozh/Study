@@ -13,8 +13,121 @@ public class LabsThree {
     Tasks tak = new Tasks();
     Labs l19 = new Labs();
     public static Scanner num = new Scanner(System.in);
-    public static int min = 1, max = 3, n = 3, m = 3;
+    public static int min = 1, max = 3, n = 10, m = 10;
     public static int[][] mas;
+
+    public void test2228() {
+//        n = l19.masSize();
+//        m = l19.masSize();
+        int[][] mas = new int[n][m];
+        tak.random(mas);
+        tak.write(mas);
+        int c = l19.cellMas() - 1;
+        int k = l19.cellMas() - 1;
+        System.out.println(result22281(mas, c, k));
+        result22282(mas);
+        System.out.println(result22283(mas, c, k));
+    }
+    public boolean result22281(int[][] mas, int c, int k) {
+        boolean flag = false;
+        int count = 0;
+        for (int i = c - 1; i <= c + 1; i++) {
+            for (int j = k - 1; j <= k + 1; j++) {
+                if (mas[c][k] > mas[i][j])
+                    count++;
+            }
+            if (count == 8)
+                flag = true;
+        }
+        System.out.println();
+        return flag;
+    }
+    public void result22282(int[][] mas) {
+        for (int g = 1; g < mas.length - 1; g++) {
+            for (int f = 1; f < mas[g].length - 1; f++) {
+                int count = 0;
+                for (int i = g - 1; i <= g + 1; i++) {
+                    for (int j = f - 1; j <= f + 1; j++) {
+                        if (mas[g][f] > mas[i][j])
+                            count++;
+                    }
+                }
+                if (count == 8)
+                    System.out.print("[" + g + "." + f + "] ");
+            }
+        }
+    }
+    public boolean result22283(int[][] mas, int c, int k) {
+        int globalCount = 0;
+        for (int g = 1; g < mas.length - 1; g++) {
+            for (int f = 1; f < mas[0].length - 1; f++) {
+                int count = 0;
+                for (int i = g - 1; i <= g + 1; i++) {
+                    for (int j = f - 1; j <= g + 1; j++) {
+                        if (mas[g][f] > mas[i][j])
+                            count++;
+                    }
+                }
+                if (count == 8) {
+                    System.out.print("[" + g + "." + f + "] ");
+                    globalCount++;
+                    if (mas[c][k] > mas[g][f])
+                        globalCount--;
+                }
+            }
+        }
+        System.out.println();
+        if (globalCount == 1)
+            return true;
+        else
+            return false;
+    }
+
+    public void test2227() {
+        n = l19.masSize();
+        m = l19.masSize();
+        int[][] masOne = new int[n][n];
+        n = l19.masSize();
+        m = l19.masSize();
+        int[][] masTwo = new int[n][n];
+        System.out.println(result2227(masOne,masTwo));
+    }
+    public int result2227(int[][] masOne, int[][] masTwo) {
+//        if (masOne.length > masTwo.length)
+//            return false;
+//        if (masOne[0].length > masTwo[0].length)
+//            return false;
+        for (int i = 0; i < masOne.length; i++) {
+            for (int j = 0; j < masOne[i].length; j++)
+                masOne[i][j] = 0;
+        }
+        for (int i = 0; i < masTwo.length; i++) {
+            for (int j = 0; j < masTwo[i].length; j++)
+                masTwo[i][j] = 0;
+        }
+        boolean flag = false;
+        int count = 0;
+        do {
+            random(masOne, min, max);
+            random(masTwo, min, max);
+            for (int k = 0; k < (masTwo.length - masOne.length); k++) {
+                for (int f = 0; f < (masTwo[0].length - masOne[0].length); f++) {
+                    int countTwo = 0;
+                    for (int i = 0; i < masOne.length; i++)
+                        for (int j = 0; j < masOne[i].length; j++) {
+                            if (masOne[i][j] == masTwo[i + k][j + f])
+                                countTwo++;
+                        }
+                    if (countTwo == masOne[0].length * masOne[0].length)
+                        flag = true;
+                }
+                count++;
+            }
+        } while (!flag);
+        tak.write(masOne);
+        tak.write(masTwo);
+        return count;
+    }
 
     public void test2226() {
         mas = new int[n][m];
@@ -36,9 +149,8 @@ public class LabsThree {
             int countTwo = 0;
             for (int i = 0; i < mas.length; i++) {
                 for (int j = 0; j < mas[i].length; j++) {
-                    if (mas[i][j] == masTwo[i][j]) {
+                    if (mas[i][j] == masTwo[i][j])
                         countTwo++;
-                    }
                     else {
                         flag = false;
                         break;
