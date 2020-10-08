@@ -4,6 +4,7 @@ import OtherTasksMasTwo.Tasks;
 import Lesson19.Labs;
 
 
+
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
@@ -12,8 +13,111 @@ public class LabsThree {
     Tasks tak = new Tasks();
     Labs l19 = new Labs();
     public static Scanner num = new Scanner(System.in);
-    public static int min = 1, max = 25, n = 7, m = 5;
+    public static int min = 1, max = 3, n = 3, m = 3;
     public static int[][] mas;
+
+    public void test2226() {
+        mas = new int[n][m];
+        int[][] masTwo = new int[n][m];
+        System.out.println(result2226(mas, masTwo));
+    }
+    public int result2226(int[][] mas, int[][] masTwo) {
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = 0;
+                masTwo[i][j] = 0;
+            }
+        }
+        int count = 0;
+        boolean flag = false;
+        do {
+            tak.random(mas);
+            tak.random(masTwo);
+            int countTwo = 0;
+            for (int i = 0; i < mas.length; i++) {
+                for (int j = 0; j < mas[i].length; j++) {
+                    if (mas[i][j] == masTwo[i][j]) {
+                        countTwo++;
+                    }
+                    else {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (countTwo == mas.length * mas[0].length)
+                flag = true;
+            count++;
+        } while (!flag);
+        tak.write(mas);
+        tak.write(masTwo);
+        return count;
+    }
+
+    public void test2225() {
+        mas = new int[n][m];
+        int k = l19.inputOne();
+        random(mas, min, max);
+        tak.write(mas);
+        System.out.println(result2225(mas, k));
+    }
+    public boolean result2225(int[][] mas, int k) {
+        k -= 1;
+        boolean flag = false;
+        int count = 0;
+        for (int j = 0; j < mas[k].length - 1; j++) {
+            if (mas[k][j] < mas[k][j + 1])
+                count++;
+        }
+        if (count == mas[k].length - 1)
+            flag = true;
+        return flag;
+    }
+
+    public void test2224() {
+        int[] m = new int[n];
+        l19.masRandom(m, min, max);
+        l19.outputPrintf(m);
+        mas = result2222(m);
+        tak.write(mas);
+        System.out.println(result2224(mas));
+    }
+    public boolean result2224(int[][] mas) {
+        boolean flag = true;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas.length == mas[i].length)
+                flag = true;
+            else {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    public void test2223() {
+        mas = new int[n][m];
+        tak.random(mas);
+        tak.write(mas);
+        System.out.println(result2223(mas));
+
+    }
+    public int result2223(int[][] mas) {
+        int count = 0;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                int x = mas[i][j];
+                int countTwo = 0;
+                for (int k = 1; k <= x; k++) {
+                    if (mas[i][j] % k == 0)
+                        countTwo++;
+                }
+                if (countTwo <= 2)
+                    count++;
+            }
+        }
+        return count;
+    }
 
     public void test2222() {
         int[] masOne = new int[n];

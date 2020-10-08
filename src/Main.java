@@ -18,8 +18,8 @@ public class Main {
 //        l21.test2122();
         LabsThree l22 = new LabsThree();
 //        l22.chess();
-//        l22.test2222();
+        l22.test2226();
         Tasks tak = new Tasks();
-        tak.result();
+//        tak.result();
     }
 }
