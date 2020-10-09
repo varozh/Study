@@ -21,18 +21,31 @@ public class Main {
         Tasks tak = new Tasks();
 //        tak.result();
 //        tak.solutionMas();
+        tak.task();
+//        sortSelection();
+    }
+
+    public void sortBubble() {
         int n = Labs.masSize();
         SortBubble bubble = new SortBubble(n);
+        int[] mas = new int[n];
+        for (int i = 0; i < mas.length; i++)
+            bubble.into(mas[i]);
+        Labs.outputPrintf(mas);
+        bubble.bubbleSort();
+        Labs.outputPrintf(mas);
+    }
+
+    public static void sortSelection() {
+        int n = Labs.masSize();
         SortSelection selection = new SortSelection(n);
-
-
         int[] mas = new int[n];
         Labs.masRandom(mas, 150, 300);
         for (int i = 0; i < mas.length; i++)
             selection.into(mas[i]);
-
         Labs.outputPrintf(mas);
         selection.sortMas(mas);
         Labs.outputPrintf(mas);
+
     }
 }

@@ -1,7 +1,6 @@
 package other.tasks;
 
 public class SortSelection {
-    SortBubble bubble = new SortBubble(0);
     private int[] mas;
     private int elem;
 

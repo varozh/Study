@@ -9,13 +9,150 @@ public class Tasks {
     Labs l19 = new Labs();
     private int[][] mas;
 
+    public void task() {
+        task8();
+    }
+
+    public void task8() {
+        mas = inputMasSize();
+        random(mas);
+        write(mas);
+        int maxElem = 0;
+        for (int j = 0; j < mas[0].length; j++) {
+            int k = 0;
+            int minElem = mas[k][0];
+            for (int i = 0; i < mas.length; i++) {
+                if (mas[i][j] < minElem)
+                    minElem = mas[i][j];
+            }
+            if (minElem > maxElem)
+                maxElem = minElem;
+            k++;
+        }
+        System.out.println(maxElem);
+    }
+
+    public void task7() {
+        mas = inputMasSize();
+        random(mas);
+        write(mas);
+        int max = 0;
+        int maxIndex = 0;
+        for (int j = 0; j < mas[0].length; j++) {
+            int sum = 0;
+            for (int i = 0; i < mas.length; i++)
+                sum += mas[i][j];
+            if (sum > max) {
+                max = sum;
+                maxIndex = j + 1;
+            }
+        }
+        System.out.println("Наиб сумма в " + maxIndex + " столбце");
+    }
+
+    public void task6() {
+        mas = inputMasSize();
+        random(mas);
+        for (int i = 0; i < mas.length; i++) {
+            int sum = 0;
+            System.out.println();
+            for (int j = 0; j < mas[i].length; j++) {
+                sum += mas[i][j];
+                System.out.printf("%4d", mas[i][j]);
+            }
+            System.out.printf("%4d", sum);
+        }
+        System.out.println();
+        for (int j = 0; j < mas[0].length; j++) {
+            int sum = 0;
+            for (int i = 0; i < mas.length; i++) {
+                sum += mas[i][j];
+            }
+            System.out.printf("%4d", sum);
+        }
+    }
+
+    public int[][] inputMasSize() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        return mas;
+    }
+
+    public void task5() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        int[][] ar1 = new int[n][m];
+        int[][] ar2 = new int[n][m];
+        random(ar1);
+        random(ar2);
+        write(ar1);
+        write(ar2);
+        int[][] ar3 = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (ar1[i][j] >= ar2[i][j])
+                    ar3[i][j] = ar1[i][j];
+                else
+                    ar3[i][j] = ar2[i][j];
+            }
+        }
+        write(ar3);
+    }
+
+    public void task4() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        random(mas);
+        write(mas);
+        int[] ar = new int[m];
+        int k = Labs.inputOne() - 1;
+        for (int j = 0; j < mas[k].length; j++)
+            ar[j] = mas[k][j];
+        Labs.outputPrintf(ar);
+    }
+
+    public void task3() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++)
+                if (i == 0 || j == 0)
+                    mas[i][j] = (int) Math.sin(n * (i + 1) + m * (j + 1));
+                else
+                    mas[i][j] = (int) Math.sin(n * i + m * j);
+        }
+        for (int[] i: mas) {
+            for (int j: i)
+                if (j <= 0)
+                    j = 0;
+        }
+        write(mas);
+    }
+
+    public void task1() {
+        int n = Labs.masSize();
+        mas = new int[n][n];
+        l19.random(mas, -15, 15);
+        write(mas);
+        for (int i = 0; i < mas.length; i++)
+            if (mas[i][i] >= 0)
+                System.out.print(mas[i][i] + " ");
+    }
+
     public void solutionMas() {
         mas = new int[3][3];
-        for (int i = 0; i < 3; i++) {
+        int value = 1;
+        for (int i = 0; i < mas.length; i++) {
             System.out.println();
-            for (int j = 0; j < 3; j++)
-                System.out.print(i * 3 + j + 1 + " ");
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value++;
+            }
         }
+        Labs.outputMasTwo(mas);
     }
 
     public void result() {
