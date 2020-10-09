@@ -1,13 +1,8 @@
-package Lesson21;
+package lesson21;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
-import java.util.Random;
-import java.util.Arrays;
 
 public class LabsTwo {
     public static Scanner num = new Scanner(System.in);

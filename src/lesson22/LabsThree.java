@@ -1,12 +1,11 @@
-package Lesson22;
+package lesson22;
 
-import OtherTasksMasTwo.Tasks;
-import Lesson19.Labs;
+import other.tasks.Tasks;
+import lesson19.Labs;
 
 
 
 import java.util.Scanner;
-import java.util.Random;
 import java.util.Arrays;
 
 public class LabsThree {
