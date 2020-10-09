@@ -4,6 +4,7 @@ import lesson22.LabsThree;
 import other.tasks.Tasks;
 import other.tasks.SortBubble;
 import other.tasks.SortSelection;
+import other.tasks.PrimeNumbersFrom2To100;
 
 
 public class Main {
@@ -22,8 +23,10 @@ public class Main {
         Tasks tak = new Tasks();
 //        tak.result();
 //        tak.solutionMas();
-        tak.task();
+//        tak.task();
 //        sortSelection();
+        PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
+        primeNumbers.run();
     }
 
     public void sortBubble() {
@@ -47,6 +50,5 @@ public class Main {
         Labs.outputPrintf(mas);
         selection.sortMas(mas);
         Labs.outputPrintf(mas);
-
     }
 }

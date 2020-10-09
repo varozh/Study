@@ -19,16 +19,14 @@ public class Tasks {
         write(mas);
         int maxElem = 0;
         for (int j = 0; j < mas[0].length; j++) {
-            int k = 0;
-            int minElem = mas[k][0];
-            for (int i = 0; i < mas.length; i++) {
+            int minElem = mas[0][j];
+            for (int i = 0; i < mas.length; i++)
                 if (mas[i][j] < minElem)
                     minElem = mas[i][j];
-            }
             if (minElem > maxElem)
                 maxElem = minElem;
-            k++;
         }
+        System.out.println();
         System.out.println(maxElem);
     }
 
