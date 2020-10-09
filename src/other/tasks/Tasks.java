@@ -1,14 +1,14 @@
-package OtherTasksMasTwo;
+package other.tasks;
 
-import Lesson19.Labs;
+import lesson19.Labs;
 
 import java.util.Scanner;
 
 public class Tasks {
-    public static Scanner num = new Scanner(System.in);
-    static Labs l19 = new Labs();
+    public Scanner num = new Scanner(System.in);
+    public Labs l19 = new Labs();
 
-    public static void result() {
+    public void result() {
         int n = 5, m = 5;
         int[][] mas = new int[n][m];
         random(mas);
@@ -16,7 +16,7 @@ public class Tasks {
         result11(mas);
     }
 
-    public static void result12(int[][] mas) {
+    public void result12(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int x = mas[i][mas.length - 1];
             for (int j = mas[i].length - 1; j > 0; j--)
@@ -26,7 +26,7 @@ public class Tasks {
         write(mas);
     }
 
-    public static void result11(int[][] mas) {
+    public void result11(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int x = mas[i][0];
             for (int j = 0; j < mas[i].length - 1; j++)
@@ -36,7 +36,7 @@ public class Tasks {
         write(mas);
     }
 
-    public static void result10(int[][] mas) {
+    public void result10(int[][] mas) {
         int[] fibo = new int[10];
         fibo[0] = 0;
         fibo[1] = 1;
@@ -54,7 +54,7 @@ public class Tasks {
         }
     }
 
-    public static void result9(int[][] mas) {
+    public void result9(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length - i; j++) {
                 int x = mas[i][j];
@@ -65,14 +65,14 @@ public class Tasks {
         write(mas);
     }
 
-    public static void result8(int[][] mas) {
+    public void result8(int[][] mas) {
         int x = mas[0][0];
         mas[0][0] = mas[mas.length - 1][mas[0].length - 1];
         mas[mas.length - 1][mas[0].length - 1] = x;
         write(mas);
     }
 
-    public static void result7(int[][] mas) {
+    public void result7(int[][] mas) {
         int min = mas[0][0];
         int max = mas[0][0];
         for (int i = 0; i < mas.length; i++) {
@@ -95,7 +95,7 @@ public class Tasks {
 
     }
 
-    public static void result6(int[][] mas) {
+    public void result6(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {
                 if ((i + j) % 2 == 0 && mas[i][j] % 2 != 0)
@@ -104,7 +104,7 @@ public class Tasks {
         }
     }
 
-    public static void result5(int[][] mas) {
+    public void result5(int[][] mas) {
         int i = 0;
         while ((int) Math.pow(2, i) < mas.length) {
             int j = 0;
@@ -116,7 +116,7 @@ public class Tasks {
         }
     }
 
-    public static void result4(int[][] mas) {
+    public void result4(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int countPlus = 0, countMinus = 0;
             for (int j = 0; j < mas[i].length - 1; j++) {
@@ -132,7 +132,7 @@ public class Tasks {
         }
     }
 
-    public static void result3(int[][] mas) {
+    public void result3(int[][] mas) {
         int sum = 0;
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
@@ -142,7 +142,7 @@ public class Tasks {
         System.out.println(sr);
     }
 
-    public static void result2(int[][] mas) {
+    public void result2(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
                 mas[i][j] = (int) Math.pow(mas[i][j], 2);
@@ -150,7 +150,7 @@ public class Tasks {
         write(mas);
     }
 
-    public static void result1(int[][] mas) {
+    public void result1(int[][] mas) {
         int min = mas[0][0], max = mas[0][0];
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {
@@ -172,7 +172,7 @@ public class Tasks {
         write(mas);
     }
 
-    public static void random(int[][] mas) {
+    public void random(int[][] mas) {
         int min = 1, max = 15;
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
@@ -180,7 +180,7 @@ public class Tasks {
         }
     }
 
-    public static void write(int[][] mas) {
+    public void write(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             System.out.println();
             for (int j = 0; j < mas[i].length; j++)

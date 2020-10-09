@@ -1,12 +1,9 @@
-import Lesson19.Labs;
-import Lesson21.LabsTwo;
-import Lesson22.LabsThree;
-import OtherTasksMasTwo.Tasks;
-
-import java.util.Scanner;
+import lesson19.Labs;
+import lesson21.LabsTwo;
+import lesson22.LabsThree;
+import other.tasks.Tasks;
 
 public class Main {
-    public static Scanner num = new Scanner(System.in);
     public static void main(String[] args) {
         Labs l19 = new Labs();
 //        l19.test1938();

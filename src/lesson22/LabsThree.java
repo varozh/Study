@@ -1,20 +1,17 @@
-package Lesson22;
+package lesson22;
 
-import OtherTasksMasTwo.Tasks;
-import Lesson19.Labs;
-
-
+import other.tasks.Tasks;
+import lesson19.Labs;
 
 import java.util.Scanner;
-import java.util.Random;
 import java.util.Arrays;
 
 public class LabsThree {
     Tasks tak = new Tasks();
     Labs l19 = new Labs();
-    public static Scanner num = new Scanner(System.in);
-    public static int min = 1, max = 3, n = 10, m = 10;
-    public static int[][] mas;
+    private Scanner num = new Scanner(System.in);
+    private int min = 1, max = 3, n = 10, m = 10;
+    private int[][] mas;
 
     public void test2228() {
 //        n = l19.masSize();
@@ -27,6 +24,7 @@ public class LabsThree {
         System.out.println(result22281(mas, c, k));
         result22282(mas);
         System.out.println(result22283(mas, c, k));
+
     }
     public boolean result22281(int[][] mas, int c, int k) {
         boolean flag = false;
