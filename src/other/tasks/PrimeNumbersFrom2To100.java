@@ -34,25 +34,6 @@ public class PrimeNumbersFrom2To100 {
         }
     }
 
-    /*
-    for (int i = 0; i < masOne.length; i++) {
-            count = 0;
-            for (int k = 1; k <= masOne[i]; k++) {
-                if (masOne[i] % k == 0)
-                    count++;
-            }
-            mas[i] = new int[count + 1];
-            mas[i][0] = masOne[i];
-            int j = 1;
-            for (int k = 1; k <= masOne[i]; k++) {
-                if (masOne[i] % k == 0) {
-                    mas[i][j] = k;
-                    j++;
-                }
-            }
-        }
-     */
-
     private int primeNumbers() {
         int count = 0;
         for (int i = 2; i < 100; i++) {
