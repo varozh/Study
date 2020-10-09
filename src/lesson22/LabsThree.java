@@ -2,7 +2,6 @@ package lesson22;
 
 import other.tasks.Tasks;
 import lesson19.Labs;
-
 import java.util.Scanner;
 import java.util.Arrays;
 
