@@ -2,14 +2,15 @@ package other.tasks;
 
 import lesson19.Labs;
 
-public class PrimeNumbersFrom2To100 {
-    private int count = primeNumbers();
+public class NotPrimeNumberFrom2To100 {
+    private int count = countNotPrimeNumbers();
     private int[][] mas = new int[count][];
+    Tasks tak = new Tasks();
 
     public void run() {
         resultOne(mas);
         resultTwo(mas);
-        Labs.outputMasTwo(mas);
+        tak.write(mas);
     }
 
     private void resultOne(int[][] mas) {
@@ -20,7 +21,7 @@ public class PrimeNumbersFrom2To100 {
                 if (g % k == 0)
                     count++;
             }
-            if (count == 2) {
+            if (count > 2) {
                 mas[i] = new int[count + 1];
                 mas[i][0] = g;
                 i++;
@@ -32,29 +33,25 @@ public class PrimeNumbersFrom2To100 {
         for (int i = 0; i < mas.length; i++) {
             int j = 1;
             for (int k = 1; k <= mas[i][0]; k++) {
-                if (mas[i][0] % k == 0) {
+                if(mas[i][0] % k == 0) {
                     mas[i][j] = k;
                     j++;
                 }
             }
         }
-
     }
 
-    private int primeNumbers() {
+    private int countNotPrimeNumbers() {
         int count = 0;
         for (int i = 2; i < 100; i++) {
-            int countPrimeNumbers = 0;
+            int countNotPrimeNumbers = 0;
             for (int j = 1; j <= i; j++) {
                 if (i % j == 0)
-                    countPrimeNumbers++;
+                    countNotPrimeNumbers++;
             }
-            if (countPrimeNumbers == 2)
+            if (countNotPrimeNumbers > 2)
                 count++;
         }
         return count;
     }
-
 }
-
-

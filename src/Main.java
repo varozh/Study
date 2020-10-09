@@ -1,10 +1,7 @@
 import lesson19.Labs;
 import lesson21.LabsTwo;
 import lesson22.LabsThree;
-import other.tasks.Tasks;
-import other.tasks.SortBubble;
-import other.tasks.SortSelection;
-import other.tasks.PrimeNumbersFrom2To100;
+import other.tasks.*;
 
 
 public class Main {
@@ -26,7 +23,9 @@ public class Main {
 //        tak.task();
 //        sortSelection();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
-        primeNumbers.run();
+//        primeNumbers.run();
+        NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
+        notPrimeNumber.run();
     }
 
     public void sortBubble() {
