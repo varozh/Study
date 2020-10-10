@@ -25,7 +25,10 @@ public class Main {
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();
         NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
-        notPrimeNumber.run();
+//        notPrimeNumber.run();
+        ConverString con = new ConverString();
+        con.run("the-stealth-warrior");
+        con.run("The_Stealth_Warrior");
     }
 
     public void sortBubble() {
