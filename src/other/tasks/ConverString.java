@@ -13,11 +13,16 @@ public class ConverString {
     }
 
     private String toSwap(String st) {
-        String[] chars = {"-", "_"};
-        for (String temp : chars)
-            st = st.replace(temp, "");
-
-        return st;
+        char[] chars = st.toCharArray();
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] == '-' || chars[i] == '_')
+                chars[i + 1] = Character.toUpperCase(chars[i + 1]);
+        }
+        String s = new String(chars);
+        String[] badChars = {"-", "_"};
+        for (String temp : badChars)
+            s = s.replace(temp, "");
+        return s;
     }
 
     private void print(String st) {

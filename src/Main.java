@@ -27,8 +27,8 @@ public class Main {
         NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
 //        notPrimeNumber.run();
         ConverString con = new ConverString();
-        con.run("the-stealth-warrior");
-        con.run("The_Stealth_Warrior");
+        String s = LabsTwo.inputString();
+        con.run(s);
     }
 
     public void sortBubble() {
