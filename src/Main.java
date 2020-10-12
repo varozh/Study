@@ -33,8 +33,6 @@ public class Main {
 //        testRemoveElem();
         String st = LabsTwo.inputString();
         RandomWord word = new RandomWord(st);
-        word.print();
-
     }
 
     public static void testRemoveElem() {
