@@ -15,21 +15,22 @@ public class RandomWord {
     }
 
     public void print() {
+        st = String.join(" ", words);
         System.out.println(st);
     }
 
     private void defineWord() {
-        String s;
-        for (String word: words)
-            if (word.length() >= 5) {
-                char[] chars = word.toCharArray();
-                for (int i = 0; i < chars.length; i++) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() >= 5) {
+                char[] chars = words[i].toCharArray();
+                for (int j = 0; j < chars.length; j++) {
                     int randomIndex = (int) (Math.random() * chars.length);
                     char temp = chars[i];
                     chars[i] = chars[randomIndex];
                     chars[randomIndex] = temp;
                 }
-                new String(chars);
+                words[i] = new String(chars);
             }
+        }
     }
 }
