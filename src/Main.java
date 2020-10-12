@@ -22,16 +22,39 @@ public class Main {
 //        tak.solutionMas();
 //        tak.task();
 //        sortSelection();
+//        tak.task();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();
         NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
 //        notPrimeNumber.run();
         ConverString con = new ConverString();
-        String s = LabsTwo.inputString();
-        con.run(s);
+//        con.run(LabsTwo.inputString());
+//        testSort();
+        testRemoveElem();
+
     }
 
-    public void sortBubble() {
+    public static void testRemoveElem() {
+        GenerateRandom rand = new GenerateRandom();
+        rand.GenerateRandom(10);
+        int[] mas = rand.returnMas();
+        Tasks tak = new Tasks();
+        tak.removeElem(mas);
+    }
+
+    public static void testSort() {
+        GenerateRandom rand = new GenerateRandom();
+        rand.GenerateRandom(7);
+        int[] mas = rand.returnMas();
+        SortBubble bubble = new SortBubble(mas.length);
+        for (int i = 0; i < mas.length; i++)
+            bubble.into(mas[i]);
+        bubble.bubbleSort();
+        bubble.print();
+
+    }
+
+    public static void sortBubble() {
         int n = Labs.masSize();
         SortBubble bubble = new SortBubble(n);
         int[] mas = new int[n];

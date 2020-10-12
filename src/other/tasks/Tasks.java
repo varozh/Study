@@ -2,6 +2,7 @@ package other.tasks;
 
 import lesson19.Labs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tasks {
@@ -10,7 +11,80 @@ public class Tasks {
     private int[][] mas;
 
     public void task() {
-        task8();
+//        task8();
+        creatMas4();
+    }
+
+    public void removeElem(int[] mas) {
+        int offset = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] < 0)
+                offset++;
+            else
+                mas[i - offset] = mas[i];
+        }
+        Arrays.copyOf(mas, mas.length - offset);
+        for (int i = 0; i < mas.length; i++)
+            System.out.print(mas[i] + " ");
+        System.out.println();
+    }
+
+    public void creatMas4() {
+        int n = Labs.masSize();
+        mas = new int[n][n];
+        int value = 1;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value++;
+                if ((i + j) % 2 == 1)
+                    mas[i][j] *= -1;
+            }
+        }
+        Labs.outputMasTwo(mas);
+    }
+
+    public void creatMas3() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        int value = 1;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value++;
+            }
+        }
+        Labs.outputMasTwo(mas);
+    }
+
+    public void creatMas2() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        int value;
+        for (int i = 0; i < mas.length; i++) {
+            value = mas[0].length * (i + 1);
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value--;
+            }
+        }
+        Labs.outputMasTwo(mas);
+    }
+    
+    public void creatMas1() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        int value = 1;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value++;
+            }
+        }
+        Labs.outputMasTwo(mas);
     }
 
     public void task8() {

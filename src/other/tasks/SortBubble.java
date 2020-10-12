@@ -1,7 +1,5 @@
 package other.tasks;
 
-import lesson19.Labs;
-
 public class SortBubble {
     private int[] mas;
     private int elems;
@@ -28,5 +26,11 @@ public class SortBubble {
                 if (mas[in] > mas[in + 1])
                     toSwap(in, in + 1);
         }
+    }
+
+    public void print() {
+        for (int i = 0; i < mas.length; i++)
+            System.out.print(mas[i] + " ");
+        System.out.println();
     }
 }
