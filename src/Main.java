@@ -30,7 +30,10 @@ public class Main {
         ConverString con = new ConverString();
 //        con.run(LabsTwo.inputString());
 //        testSort();
-        testRemoveElem();
+//        testRemoveElem();
+        String st = LabsTwo.inputString();
+        RandomWord word = new RandomWord(st);
+        word.print();
 
     }
 
