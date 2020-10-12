@@ -15,7 +15,6 @@ public class RandomWord {
     }
 
     public void print() {
-        st = String.join(" ", words);
         System.out.println(st);
     }
 
@@ -32,5 +31,6 @@ public class RandomWord {
                 words[i] = new String(chars);
             }
         }
+        st = String.join(" ", words);
     }
 }
