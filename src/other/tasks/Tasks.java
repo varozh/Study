@@ -22,15 +22,26 @@ public class Tasks {
         int m = Labs.masSize();
         mas = new int[n][m];
         randomTwo(mas, -15, 15);
+        int[][] masTwo = mas.clone();
         write(mas);
-        SortBubble bubble = new SortBubble();
+        write(masTwo);
+        System.out.println("--- по строчно:");
+        task11ByString();
+        System.out.println("--- по столбцам:");
+        task11ByColumn(masTwo);
+//        task11ByAll();
+    }
+    private void task11ByString() {
         for (int i = 0; i < mas.length; i++) {
-            for (int j = 0; j < mas[i].length; j++) {
-                bubble.sortMas(mas[i]);
-                mas[i] = bubble.returnMas();
-            }
+            SortBubble bubble = new SortBubble();
+            bubble.intoMas(mas[i]);
         }
-        write(mas);
+    }
+    private void task11ByColumn(int[][] masTwo) {
+        write(masTwo);
+    }
+    private void task11ByAll() {
+        
     }
 
     public void task10() {

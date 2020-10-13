@@ -1,5 +1,7 @@
 package other.tasks;
 
+import lesson19.Labs;
+
 public class SortBubble {
     private int[] mas;
     private int elems;
@@ -11,15 +13,21 @@ public class SortBubble {
     public SortBubble() {
     }
 
-    public void sortMas(int[] mas) {
+    public SortBubble(int[] mas) {
         this.mas = mas;
         bubbleSortMas();
-
+        print();
     }
 
     public void into(int value) {
         mas[elems] = value;
         elems++;
+    }
+
+    public void intoMas(int[] mas) {
+        this.mas = mas;
+        bubbleSortMas();
+        print();
     }
 
     private void toSwap(int first, int second) {
@@ -37,22 +45,19 @@ public class SortBubble {
     }
 
     private void bubbleSortMas() {
-        for (int i = 0;  i > mas.length; i++) {
-            for (int j = 0; j < i; j++)
-                if (mas[j] > mas[j+ 1])
-                    toSwap(j, j + 1);
+        boolean flag = false;
+        while (!flag) {
+            flag = true;
+            for (int i = 0; i < mas.length - 1; i++) {
+                if (mas[i] < mas[i + 1]) {
+                    toSwap(i, i + 1);
+                    flag = false;
+                }
+            }
         }
     }
 
-    public int[] returnMas() {
-        return mas;
-    }
-
-
-
     public void print() {
-        for (int i = 0; i < mas.length; i++)
-            System.out.print(mas[i] + " ");
-        System.out.println();
+        Labs.outputPrintf(mas);
     }
 }
