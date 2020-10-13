@@ -14,7 +14,7 @@ public class SortSelection {
         elem++;
     }
 
-    public void toSwap(int[] mas, int first, int second) {
+    public void toSwap(int first, int second) {
         int tmp = mas[first];
         mas[first] = mas[second];
         mas[second] = tmp;
@@ -30,7 +30,7 @@ public class SortSelection {
                     minIndex = j;
                 }
             }
-            toSwap(mas, i, minIndex);
+            toSwap(i, minIndex);
         }
     }
 }

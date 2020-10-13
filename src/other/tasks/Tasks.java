@@ -13,8 +13,24 @@ public class Tasks {
     private int[][] mas;
 
     public void task() {
-        task10();
+        task11();
 //        creatMas5();
+    }
+
+    public void task11() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        randomTwo(mas, -15, 15);
+        write(mas);
+        SortBubble bubble = new SortBubble();
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                bubble.sortMas(mas[i]);
+                mas[i] = bubble.returnMas();
+            }
+        }
+        write(mas);
     }
 
     public void task10() {
@@ -23,17 +39,20 @@ public class Tasks {
         mas = new int[n][m];
         randomTwo(mas, -1000, 1000);
         write(mas);
-        System.out.print("Введите число для поиска в массиве: ");
-        int k = num.nextInt();
-        int count = 0;
+        int[] count = new int[10];
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {
+                if (mas[i][j] < 0)
+                    mas[i][j] *= -1;
                 while (mas[i][j] != 0) {
-                    mas[i][j];
+                    count[mas[i][j] % 10]++;
+                    mas[i][j] /= 10;
                 }
             }
         }
-        System.out.println(count);
+        System.out.println("Число");
+        Labs.outputFromN1ToN2(0, 9);
+        Labs.outputPrintf(count);
     }
 
     public void task9() {

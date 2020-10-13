@@ -8,6 +8,14 @@ public class SortBubble {
         mas = new int[n];
         elems = 0;
     }
+    public SortBubble() {
+    }
+
+    public void sortMas(int[] mas) {
+        this.mas = mas;
+        bubbleSortMas();
+
+    }
 
     public void into(int value) {
         mas[elems] = value;
@@ -27,6 +35,20 @@ public class SortBubble {
                     toSwap(in, in + 1);
         }
     }
+
+    private void bubbleSortMas() {
+        for (int i = 0;  i > mas.length; i++) {
+            for (int j = 0; j < i; j++)
+                if (mas[j] > mas[j+ 1])
+                    toSwap(j, j + 1);
+        }
+    }
+
+    public int[] returnMas() {
+        return mas;
+    }
+
+
 
     public void print() {
         for (int i = 0; i < mas.length; i++)
