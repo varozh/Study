@@ -31,8 +31,8 @@ public class Main {
 //        con.run(LabsTwo.inputString());
 //        testSort();
 //        testRemoveElem();
-        String st = LabsTwo.inputString();
-        RandomWord word = new RandomWord(st);
+//        String st = LabsTwo.inputString();
+        RandomWord word = new RandomWord("рыба рыбака рыбалила");
     }
 
     public static void testRemoveElem() {

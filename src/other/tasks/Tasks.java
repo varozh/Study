@@ -12,7 +12,34 @@ public class Tasks {
 
     public void task() {
 //        task8();
-        creatMas4();
+        creatMas5();
+    }
+
+    public void task9() {
+        mas = new int[10][10];
+    }
+
+    public void creatMas5() {
+        int n = Labs.masSize();
+        mas = new int[n][n];
+        for (int i = 0; i < mas.length; i++) {
+            int value = 2;
+            int i1;
+            if (i == 0)
+                i1 = 0;
+            else
+                i1 = i - 1;
+            for (int j = i1; j >= 0; j--) {
+                mas[i][j] = value;
+                value++;
+            }
+            value = 1;
+            for (int j = i; j < mas[i].length; j++) {
+                mas[i][j] = value;
+                value++;
+            }
+        }
+        Labs.outputMasTwo(mas);
     }
 
     public void removeElem(int[] mas) {

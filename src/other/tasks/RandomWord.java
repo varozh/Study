@@ -11,7 +11,8 @@ public class RandomWord {
 
     public RandomWord(String st) {
         words = st.split(" ");
-        shuffle();
+//        shuffle();
+        shuffleWithoutLibrary();
         print();
     }
 
@@ -27,6 +28,22 @@ public class RandomWord {
                     chars.add(words[i].charAt(j));
                 Collections.shuffle(chars);
                 words[i] = chars.stream().map(e->e.toString()).collect(Collectors.joining());
+            }
+        }
+        st = String.join(" ", words);
+    }
+
+    private void shuffleWithoutLibrary() {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > 4) {
+                char[] chars = words[i].toCharArray();
+                for (int j = 0; j < chars.length - 1; j++) {
+                    int j1 = (int) (Math.random() * (j + 1));
+                    char temp = chars[j];
+                    chars[j] = chars[j1];
+                    chars[j1] = temp;
+                }
+                words[i] = new String(chars);
             }
         }
         st = String.join(" ", words);
