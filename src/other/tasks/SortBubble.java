@@ -28,10 +28,6 @@ public class SortBubble {
         elems++;
     }
 
-    public void intoMas(int[] mas) {
-        this.mas = mas;
-    }
-
     private void toSwap(int first, int second) {
         int tmp = mas[first];
         mas[first] = mas[second];
@@ -72,7 +68,7 @@ public class SortBubble {
             for (int j = 0; j < masTwo[0].length; j++) {
                 for (int i = 0; i < masTwo.length - 1; i++) {
                     if (masTwo[i][j] < masTwo[i + 1][j]) {
-                        toSwapTwo(i, i + 1 , j);
+                        toSwapTwo(i, i + 1, j);
                         flag = false;
                     }
                 }

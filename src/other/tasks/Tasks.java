@@ -23,13 +23,16 @@ public class Tasks {
         mas = new int[n][m];
         randomTwo(mas, -15, 15);
         int[][] masTwo = new int[n][m];
+        int[][] masThree = new int[n][m];
         copyMas(mas, masTwo);
+        copyMas(mas, masThree);
         write(mas);
         System.out.println("--- по строчно:");
         task11ByString();
-        System.out.println("--- по столбцам:");
+        System.out.print("--- по столбцам:");
         task11ByColumn(masTwo);
-//        task11ByAll();
+        System.out.print("--- по строкам и столбцам:");
+        task11ByAll(masThree);
     }
     private void task11ByString() {
         for (int i = 0; i < mas.length; i++) {
@@ -39,16 +42,12 @@ public class Tasks {
         }
     }
     private void task11ByColumn(int[][] masTwo) {
-        for (int j = 0; j < masTwo[0].length; j++) {
-            for (int i = 0; i < masTwo.length; i++) {
-                SortBubble bubble = new SortBubble(mas[i][j]);
-                bubble.bubbleSortMasTwo();
-                bubble.printTwo();
-            }
-        }
+        SortBubble bubble = new SortBubble(masTwo);
+        bubble.bubbleSortMasTwo();
+        bubble.printTwo();
     }
-    private void task11ByAll() {
-
+    private void task11ByAll(int[][] masThree) {
+        write(masThree);
     }
 
     public void copyMas(int[][] mas, int[][] masTwo) {
