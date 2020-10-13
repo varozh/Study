@@ -2,7 +2,8 @@ package other.tasks;
 
 import lesson21.LabsTwo;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class RandomWord {
     private String[] words;
@@ -10,7 +11,7 @@ public class RandomWord {
 
     public RandomWord(String st) {
         words = st.split(" ");
-        defineWord();
+        shuffle();
         print();
     }
 
@@ -18,17 +19,14 @@ public class RandomWord {
         System.out.println(st);
     }
 
-    private void defineWord() {
+    private void shuffle() {
         for (int i = 0; i < words.length; i++) {
-            if (words[i].length() >= 5) {
-                char[] chars = words[i].toCharArray();
-                for (int j = 0; j < chars.length; j++) {
-                    int randomIndex = (int) (Math.random() * chars.length);
-                    char temp = chars[i];
-                    chars[i] = chars[randomIndex];
-                    chars[randomIndex] = temp;
-                }
-                words[i] = new String(chars);
+            if (words[i].length() > 4) {
+                List<Character> chars = new ArrayList<>();
+                for (int j = 0; j < words[i].length(); j++)
+                    chars.add(words[i].charAt(j));
+                Collections.shuffle(chars);
+                words[i] = chars.stream().map(e->e.toString()).collect(Collectors.joining());
             }
         }
         st = String.join(" ", words);
