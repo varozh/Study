@@ -22,6 +22,7 @@ public class Main {
 //        tak.solutionMas();
 //        tak.task();
 //        sortSelection();
+        System.out.println('(.)(.)');
         tak.task();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();
