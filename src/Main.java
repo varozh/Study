@@ -22,7 +22,7 @@ public class Main {
 //        tak.solutionMas();
 //        tak.task();
 //        sortSelection();
-//        tak.task();
+        tak.task();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();
         NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
@@ -32,7 +32,7 @@ public class Main {
 //        testSort();
 //        testRemoveElem();
 //        String st = LabsTwo.inputString();
-        RandomWord word = new RandomWord("рыба рыбака рыбалила");
+//        RandomWord word = new RandomWord("рыба рыбака рыбалила");
     }
 
     public static void testRemoveElem() {

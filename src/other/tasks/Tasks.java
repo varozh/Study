@@ -1,6 +1,8 @@
 package other.tasks;
 
 import lesson19.Labs;
+import lesson21.LabsTwo;
+import lesson22.LabsThree;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,12 +13,42 @@ public class Tasks {
     private int[][] mas;
 
     public void task() {
-//        task8();
-        creatMas5();
+        task10();
+//        creatMas5();
+    }
+
+    public void task10() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        randomTwo(mas, -1000, 1000);
+        write(mas);
+        System.out.print("Введите число для поиска в массиве: ");
+        int k = num.nextInt();
+        int count = 0;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                while (mas[i][j] != 0) {
+                    mas[i][j];
+                }
+            }
+        }
+        System.out.println(count);
     }
 
     public void task9() {
         mas = new int[10][10];
+        random(mas);
+        write(mas);
+        System.out.println("------------------");
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = i; j <= i; j++) {
+                int temp = mas[i][j];
+                mas[i][j] = mas[i][mas[i].length - i - 1];
+                mas[i][mas[i].length - i - 1] = temp;
+            }
+        }
+        write(mas);
     }
 
     public void creatMas5() {
@@ -420,6 +452,13 @@ public class Tasks {
 
     public void random(int[][] mas) {
         int min = 1, max = 15;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++)
+                mas[i][j] = (int) (Math.random() * ((max - min) + 1) + min);
+        }
+    }
+
+    public void randomTwo(int[][] mas, int min, int max) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
                 mas[i][j] = (int) (Math.random() * ((max - min) + 1) + min);
