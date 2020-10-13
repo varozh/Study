@@ -22,7 +22,7 @@ public class Main {
 //        tak.solutionMas();
 //        tak.task();
 //        sortSelection();
-        System.out.println('(.)(.)');
+        System.out.println("(.)(.)"); //artimon commit in github
         tak.task();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();

@@ -4,19 +4,23 @@ import lesson19.Labs;
 
 public class SortBubble {
     private int[] mas;
+    private int[][] masTwo;
     private int elems;
 
     public SortBubble(int n) {
         mas = new int[n];
         elems = 0;
     }
+
     public SortBubble() {
     }
 
     public SortBubble(int[] mas) {
         this.mas = mas;
-        bubbleSortMas();
-        print();
+    }
+
+    public SortBubble(int[][] mas) {
+        this.masTwo = mas;
     }
 
     public void into(int value) {
@@ -26,8 +30,6 @@ public class SortBubble {
 
     public void intoMas(int[] mas) {
         this.mas = mas;
-        bubbleSortMas();
-        print();
     }
 
     private void toSwap(int first, int second) {
@@ -44,7 +46,7 @@ public class SortBubble {
         }
     }
 
-    private void bubbleSortMas() {
+    public void bubbleSortMas() {
         boolean flag = false;
         while (!flag) {
             flag = true;
@@ -57,7 +59,33 @@ public class SortBubble {
         }
     }
 
+    private void toSwapTwo(int first, int second, int j) {
+        int tmp = masTwo[first][j];
+        masTwo[first][j] = masTwo[second][j];
+        masTwo[second][j] = tmp;
+    }
+
+    public void bubbleSortMasTwo() {
+        boolean flag = false;
+        while (!flag) {
+            flag = true;
+            for (int j = 0; j < masTwo[0].length; j++) {
+                for (int i = 0; i < masTwo.length - 1; i++) {
+                    if (masTwo[i][j] < masTwo[i + 1][j]) {
+                        toSwapTwo(i, i + 1 , j);
+                        flag = false;
+                    }
+                }
+            }
+        }
+    }
+
     public void print() {
         Labs.outputPrintf(mas);
+    }
+
+    public void printTwo() {
+        Tasks tak = new Tasks();
+        tak.write(masTwo);
     }
 }
