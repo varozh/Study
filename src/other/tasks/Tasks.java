@@ -13,26 +13,50 @@ public class Tasks {
     private int[][] mas;
 
     public void task() {
-        task11();
-//        creatMas5();
+        createMas();
     }
 
-    public void task11() {
+    private void createMas() {
+        int n = Labs.masSize();
+        int m = Labs.masSize();
+        mas = new int[n][m];
+        randomTwo(mas, -15, 15);
+        write(mas);
+        result6();
+    }
+    private void result6() {
+
+    }
+    private void result5() {
+        int[] arr = new int[mas[0].length];
+        int k = 0;
+        for (int j = 0; j < mas[0].length; j++) {
+            for (int i = 0; i < mas.length; i++) {
+                if (mas[i][j] < 0) {
+                    arr[k] = mas[i][j];
+                    break;
+                }
+            }
+            k++;
+        }
+        System.out.println();
+        Labs.outputPrintf(arr);
+    }
+
+    private void task11() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
         randomTwo(mas, -15, 15);
         int[][] masTwo = new int[n][m];
-        int[][] masThree = new int[n][m];
         copyMas(mas, masTwo);
-        copyMas(mas, masThree);
         write(mas);
         System.out.println("--- по строчно:");
         task11ByString();
         System.out.print("--- по столбцам:");
         task11ByColumn(masTwo);
         System.out.print("--- по строкам и столбцам:");
-        task11ByAll(masThree);
+        task11ByAll();
     }
     private void task11ByString() {
         for (int i = 0; i < mas.length; i++) {
@@ -43,11 +67,31 @@ public class Tasks {
     }
     private void task11ByColumn(int[][] masTwo) {
         SortBubble bubble = new SortBubble(masTwo);
-        bubble.bubbleSortMasTwo();
+        bubble.bubbleSortMasTwoByColumn();
         bubble.printTwo();
     }
-    private void task11ByAll(int[][] masThree) {
-        write(masThree);
+    private void task11ByAll() {
+        int[] masSort = new int[mas.length * mas[0].length];
+        int k = 0;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                masSort[k] = mas[i][j];
+                k++;
+            }
+        }
+        SortBubble bubble = new SortBubble(masSort.length);
+        for (int i = 0; i < masSort.length; i++)
+            bubble.into(masSort[i]);
+        bubble.bubbleSort();
+        masSort = bubble.returnMas();
+        k = 0;
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] = masSort[k];
+                k++;
+            }
+        }
+        write(mas);
     }
 
     public void copyMas(int[][] mas, int[][] masTwo) {
@@ -57,7 +101,7 @@ public class Tasks {
         }
     }
 
-    public void task10() {
+    private void task10() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -79,7 +123,7 @@ public class Tasks {
         Labs.outputPrintf(count);
     }
 
-    public void task9() {
+    private void task9() {
         mas = new int[10][10];
         random(mas);
         write(mas);
@@ -94,7 +138,7 @@ public class Tasks {
         write(mas);
     }
 
-    public void creatMas5() {
+    private void creatMas5() {
         int n = Labs.masSize();
         mas = new int[n][n];
         for (int i = 0; i < mas.length; i++) {
@@ -131,7 +175,7 @@ public class Tasks {
         System.out.println();
     }
 
-    public void creatMas4() {
+    private void creatMas4() {
         int n = Labs.masSize();
         mas = new int[n][n];
         int value = 1;
@@ -146,7 +190,7 @@ public class Tasks {
         Labs.outputMasTwo(mas);
     }
 
-    public void creatMas3() {
+    private void creatMas3() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -160,7 +204,7 @@ public class Tasks {
         Labs.outputMasTwo(mas);
     }
 
-    public void creatMas2() {
+    private void creatMas2() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -175,7 +219,7 @@ public class Tasks {
         Labs.outputMasTwo(mas);
     }
     
-    public void creatMas1() {
+    private void creatMas1() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -189,7 +233,7 @@ public class Tasks {
         Labs.outputMasTwo(mas);
     }
 
-    public void task8() {
+    private void task8() {
         mas = inputMasSize();
         random(mas);
         write(mas);
@@ -206,7 +250,7 @@ public class Tasks {
         System.out.println(maxElem);
     }
 
-    public void task7() {
+    private void task7() {
         mas = inputMasSize();
         random(mas);
         write(mas);
@@ -224,7 +268,7 @@ public class Tasks {
         System.out.println("Наиб сумма в " + maxIndex + " столбце");
     }
 
-    public void task6() {
+    private void task6() {
         mas = inputMasSize();
         random(mas);
         for (int i = 0; i < mas.length; i++) {
@@ -253,7 +297,7 @@ public class Tasks {
         return mas;
     }
 
-    public void task5() {
+    private void task5() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         int[][] ar1 = new int[n][m];
@@ -274,7 +318,7 @@ public class Tasks {
         write(ar3);
     }
 
-    public void task4() {
+    private void task4() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -287,7 +331,7 @@ public class Tasks {
         Labs.outputPrintf(ar);
     }
 
-    public void task3() {
+    private void task3() {
         int n = Labs.masSize();
         int m = Labs.masSize();
         mas = new int[n][m];
@@ -306,7 +350,7 @@ public class Tasks {
         write(mas);
     }
 
-    public void task1() {
+    private void task1() {
         int n = Labs.masSize();
         mas = new int[n][n];
         l19.random(mas, -15, 15);
@@ -316,7 +360,7 @@ public class Tasks {
                 System.out.print(mas[i][i] + " ");
     }
 
-    public void solutionMas() {
+    private void solutionMas() {
         mas = new int[3][3];
         int value = 1;
         for (int i = 0; i < mas.length; i++) {
@@ -329,7 +373,7 @@ public class Tasks {
         Labs.outputMasTwo(mas);
     }
 
-    public void result() {
+    private void result() {
         int n = 5, m = 5;
         int[][] mas = new int[n][m];
         random(mas);
@@ -337,7 +381,7 @@ public class Tasks {
         result11(mas);
     }
 
-    public void result12(int[][] mas) {
+    private void result12(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int x = mas[i][mas.length - 1];
             for (int j = mas[i].length - 1; j > 0; j--)
@@ -347,7 +391,7 @@ public class Tasks {
         write(mas);
     }
 
-    public void result11(int[][] mas) {
+    private void result11(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int x = mas[i][0];
             for (int j = 0; j < mas[i].length - 1; j++)
@@ -357,7 +401,7 @@ public class Tasks {
         write(mas);
     }
 
-    public void result10(int[][] mas) {
+    private void result10(int[][] mas) {
         int[] fibo = new int[10];
         fibo[0] = 0;
         fibo[1] = 1;
@@ -375,7 +419,7 @@ public class Tasks {
         }
     }
 
-    public void result9(int[][] mas) {
+    private void result9(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length - i; j++) {
                 int x = mas[i][j];
@@ -386,14 +430,14 @@ public class Tasks {
         write(mas);
     }
 
-    public void result8(int[][] mas) {
+    private void result8(int[][] mas) {
         int x = mas[0][0];
         mas[0][0] = mas[mas.length - 1][mas[0].length - 1];
         mas[mas.length - 1][mas[0].length - 1] = x;
         write(mas);
     }
 
-    public void result7(int[][] mas) {
+    private void result7(int[][] mas) {
         int min = mas[0][0];
         int max = mas[0][0];
         for (int i = 0; i < mas.length; i++) {
@@ -416,7 +460,7 @@ public class Tasks {
 
     }
 
-    public void result6(int[][] mas) {
+    private void result6(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {
                 if ((i + j) % 2 == 0 && mas[i][j] % 2 != 0)
@@ -425,7 +469,7 @@ public class Tasks {
         }
     }
 
-    public void result5(int[][] mas) {
+    private void result5(int[][] mas) {
         int i = 0;
         while ((int) Math.pow(2, i) < mas.length) {
             int j = 0;
@@ -437,7 +481,7 @@ public class Tasks {
         }
     }
 
-    public void result4(int[][] mas) {
+    private void result4(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             int countPlus = 0, countMinus = 0;
             for (int j = 0; j < mas[i].length - 1; j++) {
@@ -453,7 +497,7 @@ public class Tasks {
         }
     }
 
-    public void result3(int[][] mas) {
+    private void result3(int[][] mas) {
         int sum = 0;
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
@@ -463,7 +507,7 @@ public class Tasks {
         System.out.println(sr);
     }
 
-    public void result2(int[][] mas) {
+    private void result2(int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++)
                 mas[i][j] = (int) Math.pow(mas[i][j], 2);
@@ -471,7 +515,7 @@ public class Tasks {
         write(mas);
     }
 
-    public void result1(int[][] mas) {
+    private void result1(int[][] mas) {
         int min = mas[0][0], max = mas[0][0];
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {

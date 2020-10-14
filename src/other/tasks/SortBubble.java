@@ -37,7 +37,7 @@ public class SortBubble {
     public void bubbleSort() {
         for (int out = elems - 1; out >= 1; out--) {
             for (int in = 0; in < out; in++)
-                if (mas[in] > mas[in + 1])
+                if (mas[in] < mas[in + 1])
                     toSwap(in, in + 1);
         }
     }
@@ -55,20 +55,20 @@ public class SortBubble {
         }
     }
 
-    private void toSwapTwo(int first, int second, int j) {
-        int tmp = masTwo[first][j];
-        masTwo[first][j] = masTwo[second][j];
-        masTwo[second][j] = tmp;
+    private void toSwapTwo(int i1, int j1 , int i2, int j2) {
+        int tmp = masTwo[i1][j1];
+        masTwo[i1][j1] = masTwo[i2][j2];
+        masTwo[i2][j2] = tmp;
     }
 
-    public void bubbleSortMasTwo() {
+    public void bubbleSortMasTwoByColumn() {
         boolean flag = false;
         while (!flag) {
             flag = true;
             for (int j = 0; j < masTwo[0].length; j++) {
                 for (int i = 0; i < masTwo.length - 1; i++) {
                     if (masTwo[i][j] < masTwo[i + 1][j]) {
-                        toSwapTwo(i, i + 1, j);
+                        toSwapTwo(i, j, i + 1 , j);
                         flag = false;
                     }
                 }
@@ -78,6 +78,10 @@ public class SortBubble {
 
     public void print() {
         Labs.outputPrintf(mas);
+    }
+
+    public int[] returnMas() {
+        return mas;
     }
 
     public void printTwo() {
