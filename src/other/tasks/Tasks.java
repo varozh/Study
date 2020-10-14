@@ -21,11 +21,46 @@ public class Tasks {
         int m = Labs.masSize();
         mas = new int[n][m];
         randomTwo(mas, -15, 15);
-        write(mas);
-        result6();
+        result7();
+    }
+    private void result7() {
+        int[] arr = new int[mas[0].length];
+        for (int i = 0; i < mas.length; i++) {
+            int sum = 0;
+            System.out.println();
+            for (int j = 0; j < mas[i].length; j++) {
+                System.out.printf("%4d", mas[i][j]);
+                sum += mas[i][j];
+            }
+            System.out.print(" / " + sum);
+        }
+        int k = 0;
+        for (int j = 0; j < mas[0].length; j++) {
+            int sum = 0;
+            for (int i = 0; i < mas.length; i++) {
+                sum += mas[i][j];
+            }
+            arr[k] = sum;
+            k++;
+        }
+        System.out.println();
+        System.out.println("---");
+        Labs.outputPrintf(arr);
     }
     private void result6() {
-
+        int[] arr = new int[mas[0].length];
+        int k = 0;
+        for (int j = 0; j < mas[0].length; j++) {
+            for (int i = mas.length - 1; i >= 0; i--) {
+                if (mas[i][j] < 0) {
+                    arr[k] = mas[i][j];
+                    break;
+                }
+            }
+            k++;
+        }
+        System.out.println();
+        Labs.outputPrintf(arr);
     }
     private void result5() {
         int[] arr = new int[mas[0].length];
