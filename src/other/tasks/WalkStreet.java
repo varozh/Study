@@ -15,13 +15,31 @@ public class WalkStreet {
             road[i] = String.valueOf(side[random]);
             System.out.print(sides[random] + " ");
         }
+        resultWalks();
+    }
+
+    private void resultWalks() {
+        int x = 0, y = 0;
+        for (int i = 0; i < road.length; i++) {
+            if (road[i].equals("N"))
+                y++;
+            else if (road[i].equals("S"))
+                y--;
+            if (road[i].equals("W"))
+                x--;
+            else if (road[i].equals("E"))
+                x++;
+        }
         System.out.println();
+        System.out.println("x = " + x + ", y = " + y);
+        if (x == 0 && y == 0)
+            flag = true;
+        else
+            flag = false;
         print();
     }
 
     public void print() {
-        for (int i = 0; i < road.length; i++) {
-            System.out.print(road[i] + "  ");
-        }
+        System.out.print(flag);
     }
 }

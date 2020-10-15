@@ -22,18 +22,20 @@ public class DublecateCount {
         st = st.toLowerCase();
         List<Character> chars = new ArrayList<>();
         for (int i = 0; i < st.length(); i++) {
-            int count = 0;
-            for (int j = i + 1; j < st.length(); j++) {
-                if (st.charAt(i) == st.charAt(j))
-                    count++;
-            }
             boolean flag = true;
             for (int j = 0; j < chars.size(); j++) {
                 if (st.charAt(i) == chars.get(j))
                     flag = false;
             }
-            if (count >= 1 && flag)
-                chars.add(st.charAt(i));
+            if (flag) {
+                int count = 0;
+                for (int j = i + 1; j < st.length(); j++) {
+                    if (st.charAt(i) == st.charAt(j))
+                        count++;
+                }
+                if (count >= 1)
+                    chars.add(st.charAt(i));
+            }
         }
         System.out.println(chars);
         count = chars.size();
