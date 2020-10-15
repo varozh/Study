@@ -23,7 +23,7 @@ public class Main {
 //        tak.task();
 //        sortSelection();
         System.out.println("(.)(.)"); //artimon commit in github
-        tak.task();
+//        tak.task();
         PrimeNumbersFrom2To100 primeNumbers = new PrimeNumbersFrom2To100();
 //        primeNumbers.run();
         NotPrimeNumberFrom2To100 notPrimeNumber = new NotPrimeNumberFrom2To100();
@@ -33,7 +33,12 @@ public class Main {
 //        testSort();
 //        testRemoveElem();
 //        String st = LabsTwo.inputString();
-//        RandomWord word = new RandomWord("рыба рыбака рыбалила");
+//        RandomWord word = new RandomWord(st);
+//        MatchModel cube = new MatchModel();
+//        cube.print();
+        DublecateCount dub = new DublecateCount();
+        dub.run();
+        dub.print();
     }
 
     public static void testRemoveElem() {
