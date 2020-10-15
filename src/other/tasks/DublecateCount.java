@@ -1,5 +1,8 @@
 package other.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DublecateCount {
     private String st;
     private int count = 0;
@@ -17,33 +20,23 @@ public class DublecateCount {
 
     public void run() {
         st = st.toLowerCase();
-        char[] chars = st.toCharArray();
-        int[] countChars = new int[st.length()];
-
+        List<Character> chars = new ArrayList<>();
         for (int i = 0; i < st.length(); i++) {
+            int count = 0;
             for (int j = i + 1; j < st.length(); j++) {
                 if (st.charAt(i) == st.charAt(j))
-                    countChars[i]++;
+                    count++;
             }
-            for (int j = i + 1; j < st.length(); j++) {
-                if (st.charAt(i) == st.charAt(j))
-                    System.out.print(st.charAt(i) + "" + i + " ");
+            boolean flag = true;
+            for (int j = 0; j < chars.size(); j++) {
+                if (st.charAt(i) == chars.get(j))
+                    flag = false;
             }
+            if (count >= 1 && flag)
+                chars.add(st.charAt(i));
         }
-        System.out.println();
-
-//        for (int i = 0; i < chars.length; i++) {
-//            for (int j = i + 1; j < chars.length; j++) {
-//                if (chars[i] == chars[j])
-//                    countChars[i]++;
-//            }
-//            for (int j = i + 1; j < chars.length; j++) {
-//                if (chars[i] == chars[j])
-//                    countChars[j] = 0;
-//            }
-//        }
-        for (int i = 0; i < countChars.length; i++)
-            System.out.print(countChars[i] + " ");
+        System.out.println(chars);
+        count = chars.size();
     }
 
     public void print() {

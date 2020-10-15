@@ -36,9 +36,11 @@ public class Main {
 //        RandomWord word = new RandomWord(st);
 //        MatchModel cube = new MatchModel();
 //        cube.print();
-        DublecateCount dub = new DublecateCount();
-        dub.run();
-        dub.print();
+//        DublecateCount dub = new DublecateCount();
+//        dub.run();
+//        dub.print();
+        WalkStreet walk = new WalkStreet();
+        walk.run();
     }
 
     public static void testRemoveElem() {
