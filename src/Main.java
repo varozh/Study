@@ -39,8 +39,10 @@ public class Main {
 //        DublecateCount dub = new DublecateCount();
 //        dub.run();
 //        dub.print();
-        WalkStreet walk = new WalkStreet();
-        walk.run();
+//        WalkStreet walk = new WalkStreet();
+//        walk.run();
+        DeleteElem elems = new DeleteElem();
+        elems.run();
     }
 
     public static void testRemoveElem() {
