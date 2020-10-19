@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class LabsThree {
     Tasks tak = new Tasks();
     Labs l19 = new Labs();
-    private Scanner num = new Scanner(System.in);
+    public Scanner num = new Scanner(System.in);
     private int min = 1, max = 3, n = 10, m = 10;
     private int[][] mas;
 

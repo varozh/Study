@@ -45,7 +45,9 @@ public class Main {
 //        walk.run();
 //        DeleteElem elems = new DeleteElem();
 //        elems.run();
-        SpravochnikJava8 spr = new SpravochnikJava8();
+//        SpravochnikJava8 spr = new SpravochnikJava8();
+        Pangram pn = new Pangram();
+        pn.check();
     }
 
     public static void testRemoveElem() {
