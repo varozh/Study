@@ -3,9 +3,11 @@ import lesson21.LabsTwo;
 import lesson22.LabsThree;
 import other.tasks.*;
 
+import java.io.IOException;
+
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Labs l19 = new Labs();
 //        l19.test1938();
 //        l19.MoreArray();
@@ -41,8 +43,9 @@ public class Main {
 //        dub.print();
 //        WalkStreet walk = new WalkStreet();
 //        walk.run();
-        DeleteElem elems = new DeleteElem();
-        elems.run();
+//        DeleteElem elems = new DeleteElem();
+//        elems.run();
+        SpravochnikJava8 spr = new SpravochnikJava8();
     }
 
     public static void testRemoveElem() {
