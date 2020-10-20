@@ -47,7 +47,7 @@ public class Main {
 //        elems.run();
 //        SpravochnikJava8 spr = new SpravochnikJava8();
         Pangram pn = new Pangram();
-        pn.check();
+        pn.isogram();
     }
 
     public static void testRemoveElem() {
