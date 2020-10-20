@@ -46,8 +46,9 @@ public class Main {
 //        DeleteElem elems = new DeleteElem();
 //        elems.run();
 //        SpravochnikJava8 spr = new SpravochnikJava8();
-        Pangram pn = new Pangram();
-        pn.isogram();
+//        Pangram pn = new Pangram();
+//        pn.isogram();
+        FindMaxMinInString find = new FindMaxMinInString();
     }
 
     public static void testRemoveElem() {
