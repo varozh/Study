@@ -4,6 +4,8 @@ import lesson22.LabsThree;
 import other.tasks.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Main {
@@ -48,7 +50,14 @@ public class Main {
 //        SpravochnikJava8 spr = new SpravochnikJava8();
 //        Pangram pn = new Pangram();
 //        pn.isogram();
-        FindMaxMinInString find = new FindMaxMinInString();
+//        FindMaxMinInString find = new FindMaxMinInString();
+//        ArrayList<int[]> list = new ArrayList<int[]>();
+//        list.add(new int[] {10,0});
+//        list.add(new int[] {3,5});
+//        list.add(new int[] {2,5});
+        PeopleInTheBus bus = new PeopleInTheBus();
+//        bus.into(list);
+        bus.binaryArrayToNumber(new ArrayList<>(Arrays.asList(1, 1, 1, 1)));
     }
 
     public static void testRemoveElem() {
