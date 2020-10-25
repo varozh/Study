@@ -55,9 +55,9 @@ public class Main {
 //        list.add(new int[] {10,0});
 //        list.add(new int[] {3,5});
 //        list.add(new int[] {2,5});
-        PeopleInTheBus bus = new PeopleInTheBus();
+//        PeopleInTheBus bus = new PeopleInTheBus();
 //        bus.into(list);
-        bus.binaryArrayToNumber(new ArrayList<>(Arrays.asList(1, 1, 1, 1)));
+//        bus.binaryArrayToNumber(new ArrayList<>(Arrays.asList(1, 1, 1, 1)));
     }
 
     public static void testRemoveElem() {
