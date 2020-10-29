@@ -58,6 +58,10 @@ public class Main {
 //        PeopleInTheBus bus = new PeopleInTheBus();
 //        bus.into(list);
 //        bus.binaryArrayToNumber(new ArrayList<>(Arrays.asList(1, 1, 1, 1)));
+        String str = "123456987654";
+        int sz = 6;
+        NumString numOr = new NumString(str, sz);
+        numOr.run();
     }
 
     public static void testRemoveElem() {
