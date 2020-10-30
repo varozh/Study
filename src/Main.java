@@ -45,8 +45,40 @@ public class Main {
 //        walk.run();
 //        DeleteElem elems = new DeleteElem();
 //        elems.run();
-        SpravochnikJava8 spr = new SpravochnikJava8();
-    }
+//        SpravochnikJava8 spr = new SpravochnikJava8();
+        int[] masOne = { 10, 20, 51, -156, 235, -125, -2, -10, 228 };
+        Labs.outputPrintf(masOne);
+
+        for (int i = 0; i < masOne.length; i++) {
+            for (int j = masOne.length - 1; j > i; j--) {
+                if (masOne[j] > masOne[j - 1]) {
+                    int tmp = masOne[j];
+                    masOne[j] = masOne[j - 1];
+                    masOne[j - 1] = tmp;
+                }
+            }
+        }
+        Labs.outputPrintf(masOne);
+        System.out.println();
+
+        int[] masTwo =  { 99, -10, 123, 18, -978, 5623, 463, -9, 287, 49 };
+        Labs.outputPrintf(masTwo);
+
+        for (int i = 0; i < masTwo.length; i++) {
+            int maxIndex = i;
+            int maxNum = masTwo[i];
+            for (int j = i + 1; j < masTwo.length; j++) {
+                if (masTwo[j] > maxNum) {
+                    maxIndex = j;
+                    maxNum = masTwo[j];
+                }
+            }
+            int tmp = masTwo[i];
+            masTwo[i] = maxNum;
+            masTwo[maxIndex] = tmp;
+        }
+        Labs.outputPrintf(masTwo);
+}
 
     public static void testRemoveElem() {
         GenerateRandom rand = new GenerateRandom();
