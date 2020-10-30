@@ -4,6 +4,8 @@ import lesson22.LabsThree;
 import other.tasks.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Main {
@@ -46,39 +48,26 @@ public class Main {
 //        DeleteElem elems = new DeleteElem();
 //        elems.run();
 //        SpravochnikJava8 spr = new SpravochnikJava8();
+//        Pangram pn = new Pangram();
+//        pn.isogram();
+//        FindMaxMinInString find = new FindMaxMinInString();
+//        ArrayList<int[]> list = new ArrayList<int[]>();
+//        list.add(new int[] {10,0});
+//        list.add(new int[] {3,5});
+//        list.add(new int[] {2,5});
+//        PeopleInTheBus bus = new PeopleInTheBus();
+//        bus.into(list);
+//        bus.binaryArrayToNumber(new ArrayList<>(Arrays.asList(1, 1, 1, 1)));
+//        String str = "123456987654";
+//        int sz = 6;
+//        NumString numOr = new NumString(str, sz);
+//        numOr.run();
         int[] masOne = { 10, 20, 51, -156, 235, -125, -2, -10, 228 };
         Labs.outputPrintf(masOne);
 
-        for (int i = 0; i < masOne.length; i++) {
-            for (int j = masOne.length - 1; j > i; j--) {
-                if (masOne[j] > masOne[j - 1]) {
-                    int tmp = masOne[j];
-                    masOne[j] = masOne[j - 1];
-                    masOne[j - 1] = tmp;
-                }
-            }
-        }
-        Labs.outputPrintf(masOne);
-        System.out.println();
-
         int[] masTwo =  { 99, -10, 123, 18, -978, 5623, 463, -9, 287, 49 };
         Labs.outputPrintf(masTwo);
-
-        for (int i = 0; i < masTwo.length; i++) {
-            int maxIndex = i;
-            int maxNum = masTwo[i];
-            for (int j = i + 1; j < masTwo.length; j++) {
-                if (masTwo[j] > maxNum) {
-                    maxIndex = j;
-                    maxNum = masTwo[j];
-                }
-            }
-            int tmp = masTwo[i];
-            masTwo[i] = maxNum;
-            masTwo[maxIndex] = tmp;
-        }
-        Labs.outputPrintf(masTwo);
-}
+    }
 
     public static void testRemoveElem() {
         GenerateRandom rand = new GenerateRandom();
