@@ -63,13 +63,15 @@ public class Main {
 //        int sz = 6;
 //        NumString numOr = new NumString(str, sz);
 //        numOr.run();
+
 //        int[] masOne = { 10, 20, 51, -156, 235, -125, -2, -10, 228 };
-//        Labs.outputPrintf(masOne);
-//
-//        int[] masTwo =  { 99, -10, 123, 18, -978, 5623, 463, -9, 287, 49 };
-//        Labs.outputPrintf(masTwo);
-        MultiplicationNum multiplication = new MultiplicationNum(4);
-        System.out.println(multiplication.result());
+//        Labs.print(masOne);
+
+//        int[] masTwo =  { 99, -10, 123, 18, -978, 46, 5623, -9, 2287, 49 };
+//        Labs.print(masTwo);
+        
+//        MultiplicationNum multiplication = new MultiplicationNum(4);
+//        System.out.println(multiplication.result());
     }
 
     public static void testRemoveElem() {

@@ -2227,6 +2227,12 @@ public class Labs {
         System.out.println();
     }
 
+    public static void print(int[] mas) {
+        for (int i = 0; i < mas.length; i++)
+            System.out.print(mas[i] + " ");
+        System.out.println();
+    }
+
     public static void outputMasTwo (int[][] mas) {
         for (int i = 0; i < mas.length; i++) {
             System.out.println();
