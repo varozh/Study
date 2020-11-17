@@ -72,6 +72,43 @@ public class Main {
         
 //        MultiplicationNum multiplication = new MultiplicationNum(4);
 //        System.out.println(multiplication.result());
+//        testTrun();
+        TestReadFile st = new TestReadFile();
+        st.run();
+    }
+
+    public static void testTrun() {
+        Turn bigC = new Turn(100);
+        Turn smallC = new Turn(4);
+        char ch;
+        int i;
+
+        System.out.println("Использование очереди big для сохранения алфавита");
+
+        for (i = 0; i < 26; i++)
+            bigC.put((char) ('A' + i));
+
+        for (i = 0; i < 26; i++) {
+            ch = bigC.get();
+            if (ch != (char) 0) System.out.print(ch + " ");
+        }
+
+        System.out.println("\n");
+
+        System.out.println("Использование очереди small для генерации ошибок");
+
+        for (i = 0; i < 5; i++) {
+            System.out.print("Попытка сохранения " + (char) ('Z' - i));
+            smallC.put((char) ('Z' - i));
+            System.out.println();
+        }
+        System.out.println();
+
+        System.out.print("Содержимое small: ");
+        for (i = 0; i < 5; i++) {
+            ch = smallC.get();
+            if (ch != (char) 0) System.out.print(ch);
+        }
     }
 
     public static void testRemoveElem() {
