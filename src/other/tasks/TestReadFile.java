@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TestReadFile {
-    private String path = "C:\\Users\\buhdeka\\Desktop\\test.txt";
-    private File file = new File(path);
+    private String pathInWork = "C:\\Users\\buhdeka\\Desktop\\test.txt";
+    private String pathInHome = "C:\\Users\\Admin\\Desktop\\1.txt";
+    private File file = new File(pathInHome);
     private Scanner sc = new Scanner(file);
     private List<String> email = new ArrayList<>();
     private List<String> password = new ArrayList<>();
@@ -19,15 +20,24 @@ public class TestReadFile {
     public void run() {
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-            email.add(line.split(" ")[0]);
-            password.add(line.split(" ")[1]);
+            if (line.equals(" "))
+                continue;
+            else {
+                email.add(line.split(" ")[0]);
+                password.add(line.split(" ")[1]);
+            }
         }
         sc.close();
         print();
     }
 
     private void print() {
-        System.out.println(email);
-        System.out.println(password);
+        System.out.println("emails:\t\t\t\t пароли:");
+        for (int i = 0; i < email.size(); i++) {
+            System.out.print(email.get(i) + " - " + password.get(i));
+            System.out.println();
+        }
+//        System.out.println("email: " + email);
+//        System.out.println("пароли: " + password);
     }
 }
