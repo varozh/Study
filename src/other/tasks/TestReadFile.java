@@ -20,9 +20,7 @@ public class TestReadFile {
     public void run() {
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-            if (line.equals(" "))
-                continue;
-            else {
+            if (line.length() > 1) {
                 email.add(line.split(" ")[0]);
                 password.add(line.split(" ")[1]);
             }
@@ -37,7 +35,5 @@ public class TestReadFile {
             System.out.print(email.get(i) + " - " + password.get(i));
             System.out.println();
         }
-//        System.out.println("email: " + email);
-//        System.out.println("пароли: " + password);
     }
 }
