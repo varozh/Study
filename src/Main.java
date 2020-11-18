@@ -2,6 +2,7 @@ import lesson19.Labs;
 import lesson21.LabsTwo;
 import lesson22.LabsThree;
 import other.tasks.*;
+import testJunior.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,8 +74,10 @@ public class Main {
 //        MultiplicationNum multiplication = new MultiplicationNum(4);
 //        System.out.println(multiplication.result());
 //        testTrun();
-        TestReadFile st = new TestReadFile();
-        st.run();
+//        TestReadFile st = new TestReadFile();
+//        st.run();
+        Try work = new Try();
+        work.polidrom();
     }
 
     public static void testTrun() {
