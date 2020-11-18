@@ -35,9 +35,7 @@ public class Try {
             if (list.get(i) == list.get(list.size() - 1 - i))
                 count++;
         }
-        boolean flag = false;
-        if (count == list.size() / 2)
-            flag = true;
+        boolean flag = (count == list.size() / 2);
         System.out.println(flag);
     }
 }
