@@ -1,5 +1,7 @@
 package other.tasks;
 
+import lesson19.Labs;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,8 +13,8 @@ import java.util.Scanner;
 public class HashMapStudy {
     private String pathInWork = "C:\\Users\\buhdeka\\Desktop\\test.txt";
     private String pathInHome = "C:\\Users\\Admin\\Desktop\\1.txt";
-    private BufferedReader reader = new BufferedReader(new FileReader(pathInWork));
-    private Scanner sc = new Scanner(new File(pathInWork));
+    private BufferedReader reader = new BufferedReader(new FileReader(pathInHome));
+    private Scanner sc = new Scanner(new File(pathInHome));
     private HashMap <String, Integer> keyValue = new HashMap<String, Integer>();
     private HashMap<String, String> emailsAndName = new HashMap<String, String>();
     private List<String> emails = new ArrayList<>();
@@ -22,7 +24,49 @@ public class HashMapStudy {
     }
 
     public void run() {
-        task2();
+        task4();
+    }
+
+    private void task4() {
+        int[] mas = new int[10];
+        Labs.masRandom(mas, 1, 99);
+        Labs.print(mas);
+
+        HashMap<Integer, Integer> numbers = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < mas.length; i++) {
+            while (mas[i] != 0) {
+                int x = mas[i] % 10;
+                if (numbers.containsKey(x)) {
+                    int count = numbers.get(x);
+                    numbers.put(x, count + 1);
+                }
+                else
+                    numbers.put(x, 1);
+                mas[i] /= 10;
+            }
+        }
+
+        System.out.println(numbers);
+    }
+
+    private void task3() {
+        int[] mas = new int[10];
+        Labs.masRandom(mas, 1, 99);
+        Labs.print(mas);
+
+        HashMap<Integer, Integer> numbers = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < mas.length; i++) {
+            if (numbers.containsKey(mas[i])) {
+                int count = numbers.get(mas[i]);
+                numbers.put(mas[i], count + 1);
+            }
+            else
+                numbers.put(mas[i], 1);
+        }
+
+        System.out.println(numbers);
     }
 
     private void task2() {
