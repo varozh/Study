@@ -19,10 +19,12 @@ public class TestReadFile {
     private int count = 0;
 
     public TestReadFile() throws FileNotFoundException {
+        System.out.println("file not found");
     }
 
     public void run() {
         while (sc.hasNextLine()) {
+
             String line = sc.nextLine();
             if (line.length() > 1) {
                 emailFull.add(line.split(" ")[0]);

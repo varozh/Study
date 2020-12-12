@@ -5,6 +5,7 @@ import other.tasks.*;
 import testJunior.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -74,11 +75,19 @@ public class Main {
 //        MultiplicationNum multiplication = new MultiplicationNum(4);
 //        System.out.println(multiplication.result());
 //        testTrun();
+
 //        TestReadFile st = new TestReadFile();
 //        st.run();
 
 //        Try work = new Try();
 //        work.polidrom();
+
+        
+//        Try work = new Try();
+//        work.polidrom();
+
+        HashMapStudy hp = new HashMapStudy();
+        hp.run();
     }
 
     public static void testTrun() {
