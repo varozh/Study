@@ -76,8 +76,9 @@ public class Main {
 //        testTrun();
 //        TestReadFile st = new TestReadFile();
 //        st.run();
-        Try work = new Try();
-        work.polidrom();
+
+//        Try work = new Try();
+//        work.polidrom();
     }
 
     public static void testTrun() {
