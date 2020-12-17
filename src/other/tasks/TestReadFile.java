@@ -2,6 +2,9 @@ package other.tasks;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,11 +21,28 @@ public class TestReadFile {
     private List<String> emailDomen = new ArrayList<>();
     private int count = 0;
 
-    public TestReadFile() throws FileNotFoundException {
-        System.out.println("file not found");
-    }
+    public TestReadFile() throws FileNotFoundException { }
 
     public void run() {
+        testReadFile();
+    }
+
+    private void testReadFile() {
+        Path path = Path.of(pathInWork);
+        List<String> list = new ArrayList<>();
+        try {
+            list = Files.readAllLines(path);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (String str: list)
+            System.out.println(str);
+    }
+
+    private void creatList() {
         while (sc.hasNextLine()) {
 
             String line = sc.nextLine();

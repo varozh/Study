@@ -76,14 +76,14 @@ public class Main {
 //        System.out.println(multiplication.result());
 //        testTrun();
 
-//        TestReadFile st = new TestReadFile();
-//        st.run();
+        TestReadFile st = new TestReadFile();
+        st.run();
         
 //        Try work = new Try();
 //        work.polidrom();
 
-        HashMapStudy hp = new HashMapStudy();
-        hp.run();
+//        HashMapStudy hp = new HashMapStudy();
+//        hp.run();
     }
 
     public static void testTrun() {
