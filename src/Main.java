@@ -76,8 +76,8 @@ public class Main {
 //        System.out.println(multiplication.result());
 //        testTrun();
 
-        TestReadFile st = new TestReadFile();
-        st.run();
+//        TestReadFile st = new TestReadFile();
+//        st.run();
         
 //        TestReadFile st = new TestReadFile();
 //        st.run();
@@ -90,6 +90,12 @@ public class Main {
 
 //        HashMapStudy hp = new HashMapStudy();
 //        hp.run();
+
+//        Polidrom pl = new Polidrom("hazard");
+//        pl.run();
+
+        Fibonachi fb = new Fibonachi();
+        fb.run();
     }
 
     public static void testTrun() {
