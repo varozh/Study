@@ -3,7 +3,7 @@ package testJunior;
 import lesson19.Labs;
 
 public class Others {
-    private String st = "The quick brown fox jumps over the lazy dog.";
+    private String st;
 
     public Others() {
 
@@ -14,7 +14,36 @@ public class Others {
     }
 
     public void run() {
-        sortMass();
+        squareNumber();
+    }
+
+    private void squareNumber() {
+        int x = 9119;
+        String number = String.valueOf(x);
+        String result = "";
+
+        for (int i = 0; i < number.length(); i++) {
+            int y = (int) Math.pow(Integer.parseInt(String.valueOf(number.charAt(i))), 2);
+            result += y;
+        }
+        int y = Integer.parseInt(result);
+        System.out.println(y);
+    }
+
+    private void fixStringCase() {
+        st = "cODE";
+        int upperCase = 0, lowerCase = 0;
+        for (int i = 0; i < st.length(); i++) {
+            if (Character.isUpperCase(st.charAt(i))) upperCase++;
+            if (Character.isLowerCase(st.charAt(i))) lowerCase++;
+        }
+
+        if (upperCase <= lowerCase)
+            st = st.toLowerCase();
+        else
+            st = st.toUpperCase();
+
+        System.out.println(st);
     }
 
     private void sortMass() {
@@ -63,6 +92,8 @@ public class Others {
     }
 
     private void reverseWords() {
+        st = "The quick brown fox jumps over the lazy dog.";
+
         String reverse = "";
 
         for (String str: st.split(" ")) {
