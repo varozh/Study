@@ -7,7 +7,29 @@ import java.sql.SQLOutput;
 public class Fibonachi {
 
     public void run() {
-        test1();
+        test2();
+    }
+
+
+    private void test2() {
+        System.out.print("Введите число: ");
+        int n = Labs.num.nextInt();
+        String st = "";
+
+        if (n < 0) st = n + "<0";
+        else if (n == 0) st = n + "=0";
+        else {
+            int sum = 0;
+            for (int i = 0; i <= n; i++) {
+                sum += i;
+                st += i;
+
+                if (i < n) st += "+";
+            }
+            st += "=" + sum;
+        }
+
+        System.out.println(st);
     }
 
     private void test1() {

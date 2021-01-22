@@ -94,8 +94,11 @@ public class Main {
 //        Polidrom pl = new Polidrom("hazard");
 //        pl.run();
 
-        Fibonachi fb = new Fibonachi();
-        fb.run();
+//        Fibonachi fb = new Fibonachi();
+//        fb.run();
+
+        Others oth = new Others();
+        oth.run();
     }
 
     public static void testTrun() {
