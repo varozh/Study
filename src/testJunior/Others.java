@@ -14,7 +14,48 @@ public class Others {
     }
 
     public void run() {
-        squareNumber();
+        oddOrEven();
+    }
+
+    private void oddOrEven() {
+        int[] array = {2, 5, 34, 6};
+        int sum = 0;
+
+        for (int i: array)
+            sum += i;
+
+        System.out.println(resultOddOrEven(sum));
+    }
+
+    private static String resultOddOrEven(int x) {
+        String st;
+        if (x % 2 == 0)
+            st = "even";
+        else
+            st = "odd";
+        return st;
+    }
+
+    private void mostDigits() {
+        int[] numbers = {1, 10, 100};
+        int max = 0, index = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            int count = numberOfDigits(numbers[i]);
+            if (max < count) {
+                max = count;
+                index = i;
+            }
+        }
+    }
+
+    private static int numberOfDigits(int x) {
+        int count = 0;
+        while (x != 0) {
+            count++;
+            x /= 10;
+        }
+        return count;
     }
 
     private void squareNumber() {
