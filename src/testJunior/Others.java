@@ -2,6 +2,8 @@ package testJunior;
 
 import lesson19.Labs;
 
+import java.util.HashMap;
+
 public class Others {
     private String st;
 
@@ -14,7 +16,42 @@ public class Others {
     }
 
     public void run() {
-        palidrones();
+        duplicateEncoder();
+    }
+
+    private void duplicateEncoder() {
+        String word = "dinn";
+        char[] ch = word.toCharArray();
+
+        HashMap<Character, Integer> hp = new HashMap<>();
+
+        creatHashmap(hp, ch);
+        String result = resultDublicate(hp, ch);
+
+
+        System.out.println(result);
+    }
+
+    private void creatHashmap(HashMap<Character, Integer> hp, char[] ch) {
+        for (int i = 0; i < ch.length; i++) {
+            if (hp.containsKey(ch[i])) {
+                int count = hp.get(ch[i]);
+                hp.put(ch[i], count + 1);
+            }
+            else hp.put(ch[i], 1);
+        }
+    }
+
+    private static String resultDublicate(HashMap<Character, Integer> hp, char[] ch) {
+        String word = "";
+
+        for (int i = 0; i < ch.length; i++) {
+            if (hp.)
+                /*word += "(";
+            else word += ")";*/
+        }
+
+        return word;
     }
 
     private void palidrones() {
