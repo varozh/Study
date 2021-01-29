@@ -14,7 +14,44 @@ public class Others {
     }
 
     public void run() {
-        squareNumber();
+        palidrones();
+    }
+
+    private void palidrones() {
+        System.out.print("Введите число: ");
+        long x = Labs.num.nextLong();
+        int count = 0;
+        boolean flag = false;
+
+        while (!flag) {
+            if (testPalidrones(x))
+                break;
+            else {
+                count++;
+                x += changeNumbers(x);
+            }
+        }
+
+        System.out.println(count);
+    }
+
+    private static long changeNumbers(long x) {
+        x = Long.parseLong(new StringBuffer(String.valueOf(x)).reverse().toString());
+        return x;
+    }
+
+    private static boolean testPalidrones(long x) {
+        String st = String.valueOf(x);
+        boolean flag = true;
+
+        for (int i = 0; i < st.length() / 2; i++) {
+            if (st.charAt(i) != st.charAt(st.length() - i - 1)) {
+                flag = false;
+                break;
+            }
+        }
+
+        return flag;
     }
 
     private void squareNumber() {
